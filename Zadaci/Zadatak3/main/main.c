@@ -19,7 +19,7 @@ int main()
 	// Create a sentinel node (a node that doesn't contain any data) to mark the beginning of the list.
 	// 
 
-	Person listHead = { .m_Name = NULL, .m_Name = { '\0' }, .m_Surname = { '\0' }, .m_BirthYear = 0 };
+	Person listHead = { .m_Next = NULL, .m_Name = { '\0' }, .m_Surname = { '\0' }, .m_BirthYear = 0 };
 
 	printf(
 		"B - Insert person to the back of the list\n"
