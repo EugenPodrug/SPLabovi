@@ -229,7 +229,7 @@ int ImportListFromFile(Person* listHead, char* filename)
 	if (file == NULL)
 		return 0;
 	
-	int failed = 0;
+	int succeeded = 1;
 
 	while (1)
 	{
@@ -237,7 +237,7 @@ int ImportListFromFile(Person* listHead, char* filename)
 		
 		if (newPerson == NULL)
 		{
-			failed = 1;
+			succeeded = 0;
 			break;
 		}
 
@@ -247,7 +247,6 @@ int ImportListFromFile(Person* listHead, char* filename)
 			&newPerson->m_BirthYear) != 3)
 		{
 			free(newPerson);
-			failed = 1;
 			break;
 		}
 		
@@ -255,5 +254,5 @@ int ImportListFromFile(Person* listHead, char* filename)
 	}
 	
 	fclose(file);
-	return failed;
+	return succeeded;
 }
